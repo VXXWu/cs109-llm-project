@@ -15,7 +15,7 @@ st.markdown("Generate text that mimics a specific writing style using Logit Bias
 
 # Sidebar - Parameters
 st.sidebar.header("Parameters")
-model_name = "TinyLlama/TinyLlama-1.1B-Chat-v1.0"
+model_name = "Qwen/Qwen2.5-0.5B-Instruct"
 beta = st.sidebar.slider("Beta (Bias Strength)", 0.0, 5.0, 1.0, 0.1)
 top_k_bias = st.sidebar.slider("Top-K Bias", 10, 200, 50, 10)
 length = st.sidebar.slider("Generation Length", 50, 300, 150, 10)
@@ -49,7 +49,7 @@ with st.spinner(f"Loading {model_name}..."):
 st.subheader("1. Select Style Corpus")
 corpus_option = st.radio("Choose Corpus Source:", ["Default (Vince's Essays)", "Custom Text"])
 
-bias_path = "bias_tinyllama.pt" # Default
+bias_path = "bias_qwen.pt" # Default
 
 if corpus_option == "Custom Text":
     custom_text = st.text_area("Paste your custom text here (the more the better):", height=200)
