@@ -26,7 +26,9 @@ repetition_penalty = st.sidebar.slider("Repetition Penalty", 1.0, 2.0, 1.2, 0.1)
 @st.cache_resource
 def load_model(name):
     tokenizer = AutoTokenizer.from_pretrained(name)
-    model = AutoModelForCausalLM.from_pretrained(name)
+    # Use low_cpu_mem_usage to avoid loading full model into RAM before sharding
+    # Use float32 on CPU to be safe, or float16 if supported
+    model = AutoModelForCausalLM.from_pretrained(name, low_cpu_mem_usage=True, torch_dtype=torch.float32)
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
     model.to(device)
     
