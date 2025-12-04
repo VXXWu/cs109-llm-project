@@ -88,7 +88,7 @@ def calculate_perplexity(model, tokenizer, text, device):
     else:
         return 0.0
 
-def generate_text(model_name='Qwen/Qwen2.5-0.5B-Instruct', bias_path='bias_qwen.pt', prompt="The quick", length=100, beta=1.25, top_k_bias=50, chat_mode=False, temperature=0.7, hyphen_penalty=10.0, repetition_penalty=1.0, model=None, tokenizer=None):
+def generate_text(model_name='Qwen/Qwen2.5-0.5B-Instruct', bias_path='bias_qwen.pt', prompt="The quick", length=100, beta=1.25, top_k_bias=50, chat_mode=False, temperature=0.7, hyphen_penalty=10.0, repetition_penalty=1.2, model=None, tokenizer=None):
     
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
     

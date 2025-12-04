@@ -20,7 +20,7 @@ beta = st.sidebar.slider("Beta (Bias Strength)", 0.0, 5.0, 1.25, 0.1)
 top_k_bias = st.sidebar.slider("Top-K Bias", 10, 200, 50, 10)
 length = st.sidebar.slider("Generation Length", 50, 300, 100, 10)
 temp = st.sidebar.slider("Temperature", 0.1, 1.5, 0.7, 0.1)
-repetition_penalty = st.sidebar.slider("Repetition Penalty", 1.0, 2.0, 1.0, 0.1)
+repetition_penalty = st.sidebar.slider("Repetition Penalty", 1.0, 2.0, 1.2, 0.1)
 
 # --- Model Caching ---
 @st.cache_resource

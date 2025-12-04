@@ -8,11 +8,11 @@ from transformers import AutoTokenizer, AutoModelForCausalLM
 from generate_biased import generate_text
 
 # Configuration - DEFAULT SETTINGS
-PROMPTS_FILE = "/Users/vincewu/.gemini/antigravity/brain/921c389a-4459-4dee-8c89-878347c59216/prompts.md"
+PROMPTS_FILE = "prompts.md"
 MODEL_NAME = "Qwen/Qwen2.5-0.5B-Instruct"
 BIAS_PATH = "bias_qwen.pt"
 BETA = 1.25
-REPETITION_PENALTY = 1.0
+REPETITION_PENALTY = 1.2
 LENGTH = 100
 OUTPUT_CSV = "evaluation_results_default.csv"
 OUTPUT_PLOT_BOXPLOT = "boxplot_comparison.png"

@@ -8,7 +8,7 @@ from transformers import AutoTokenizer, AutoModelForCausalLM
 from generate_biased import generate_text
 
 # Configuration
-PROMPTS_FILE = "/Users/vincewu/.gemini/antigravity/brain/921c389a-4459-4dee-8c89-878347c59216/prompts.md"
+PROMPTS_FILE = "prompts.md"
 MODEL_NAME = "Qwen/Qwen2.5-0.5B-Instruct"
 BIAS_PATH = "bias_qwen.pt"
 BETAS = [0.5, 0.75, 1.0, 1.25, 1.5, 1.75, 2.0]
