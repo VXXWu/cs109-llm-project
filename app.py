@@ -78,7 +78,7 @@ if corpus_option == "Custom Text":
 
 # 2. Prompt
 st.subheader("2. Enter Prompt")
-prompt = st.text_input("Prompt:", "Tell me about your research")
+prompt = st.text_input("Prompt:", "Write a short story about a robot discovering a flower.")
 
 # 3. Generate
 if st.button("Generate Text", type="primary"):
