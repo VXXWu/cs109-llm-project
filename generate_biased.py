@@ -88,7 +88,7 @@ def calculate_perplexity(model, tokenizer, text, device):
     else:
         return 0.0
 
-def generate_text(model_name='TinyLlama/TinyLlama-1.1B-Chat-v1.0', bias_path='bias_tinyllama.pt', prompt="The quick", length=150, beta=1.0, top_k_bias=50, chat_mode=False, temperature=0.7, hyphen_penalty=10.0, repetition_penalty=1.2, model=None, tokenizer=None):
+def generate_text(model_name='Qwen/Qwen2.5-0.5B-Instruct', bias_path='bias_qwen.pt', prompt="The quick", length=100, beta=1.25, top_k_bias=50, chat_mode=False, temperature=0.7, hyphen_penalty=10.0, repetition_penalty=1.0, model=None, tokenizer=None):
     
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
     
@@ -294,8 +294,8 @@ def generate_text(model_name='TinyLlama/TinyLlama-1.1B-Chat-v1.0', bias_path='bi
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument('--model', type=str, default='TinyLlama/TinyLlama-1.1B-Chat-v1.0', help="Hugging Face model name")
-    parser.add_argument('--bias_path', type=str, default='bias_tinyllama.pt', help="Path to bias vector file")
+    parser.add_argument('--model', type=str, default='Qwen/Qwen2.5-0.5B-Instruct', help="Hugging Face model name")
+    parser.add_argument('--bias_path', type=str, default='bias_qwen.pt', help="Path to bias vector file")
     parser.add_argument('--prompt', type=str, default="The quick")
     parser.add_argument('--length', type=int, default=150, help="Number of tokens to generate")
     parser.add_argument('--beta', type=float, default=1.0, help="Bias scale factor")

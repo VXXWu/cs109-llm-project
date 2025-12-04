@@ -10,17 +10,17 @@ from analysis import analyze_corpus
 st.set_page_config(page_title="Biased Text Generator", layout="wide")
 
 # Title
-st.title("Biased Text Generator: Style Transfer")
-st.markdown("Generate text that mimics a specific writing style using Logit Biasing.")
+st.title("Chat-GPMe")
+st.markdown("Generate text that mimics a specific writing style using Logit Biasing. The model may take a couple of minutes to load.")
 
 # Sidebar - Parameters
 st.sidebar.header("Parameters")
 model_name = "Qwen/Qwen2.5-0.5B-Instruct"
-beta = st.sidebar.slider("Beta (Bias Strength)", 0.0, 5.0, 1.0, 0.1)
+beta = st.sidebar.slider("Beta (Bias Strength)", 0.0, 5.0, 1.25, 0.1)
 top_k_bias = st.sidebar.slider("Top-K Bias", 10, 200, 50, 10)
-length = st.sidebar.slider("Generation Length", 50, 300, 150, 10)
+length = st.sidebar.slider("Generation Length", 50, 300, 100, 10)
 temp = st.sidebar.slider("Temperature", 0.1, 1.5, 0.7, 0.1)
-repetition_penalty = st.sidebar.slider("Repetition Penalty", 1.0, 2.0, 1.2, 0.1)
+repetition_penalty = st.sidebar.slider("Repetition Penalty", 1.0, 2.0, 1.0, 0.1)
 
 # --- Model Caching ---
 @st.cache_resource
@@ -118,4 +118,4 @@ if st.button("Generate Text", type="primary"):
 
 # Footer
 st.markdown("---")
-st.markdown("Built with Streamlit & TinyLlama")
+st.markdown("Built with Streamlit & Qwen")
