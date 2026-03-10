@@ -47,7 +47,7 @@ with st.spinner(f"Loading {model_name}..."):
 
 # 1. Corpus Selection
 st.subheader("1. Select Style Corpus")
-corpus_option = st.radio("Choose Corpus Source:", ["Default (Vince's Essays)", "Custom Text"])
+corpus_option = st.radio("Choose Corpus Source:", ["Default (Shakespeare)", "Custom Text"])
 
 bias_path = "bias_qwen.pt" # Default
 
